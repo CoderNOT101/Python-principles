@@ -1,0 +1,107 @@
+### freshing up on python skills
+
+
+## first challenge -- return the location of capital letters within a string.
+
+def capital_indexes(text):
+    ans =[]
+    for i,y in enumerate(list(text),0):
+        if y.isupper() == True:
+            ans.append(i)
+    return ans
+
+        
+## Second challenge -- return the middle letter of a given string, if none return ""
+
+def mid(z):
+    if len(z) % 2 == 0:
+        return ""
+    if len(z) % 2 == 1:
+        for i in list(z):
+            x = len(z)/2
+            return list(z)[int(x)]
+            
+## third challenge -- count the number of people with an online status.
+        
+def online_count(status):
+    online = []
+    for i in status.values():
+        if i.lower() == "online":
+            online.append(i)
+    return len(online)
+
+## fourth challenge -- generate a random number from 1 - 100, no floats.
+
+import random
+def random_number():
+    return random.randint(1, 100)
+    
+        
+## fifth challlenge -- determine if two parameters are both integers, if not return false.
+
+def only_ints(first, second):
+    if type(first) == int and type(second) == int:
+        return True
+    return False
+    
+    
+## sixth challenge -- determine if a string has two consective identical letters, example, "hello" must return true.
+
+def double_letters(name):
+    x = list(name)
+    for i in range(0, len(x)-1):
+        if x[i] == x[i+1]:
+            return True
+            
+ 
+## seventh challenge -- create a function that can add dots in a given string (assuming there are none to begin with). and create another function that removes dots.
+
+def add_dots(job):
+    x = list(job)
+    add = '.'
+    add = add.join(x)
+    return add
+
+def remove_dots(remove):
+    x = list(remove)
+    em1 = ""
+    for i in x:
+        if i != '.':
+            em1 +=i
+    return em1
+ 
+## anagrams -- given two parameters determine if they are anagrams
+
+def is_anagram(str1,str2):
+    if sorted(str1) == sorted(str2):
+        return True
+    return False
+
+## tic tac toe -- Create location points of a tic tac toe board.
+
+def get_row_col(s):
+    row = 0
+    col = 0
+    for i in list(s):
+        if i == "A":
+            col += 0
+        if i =="B":
+            col += 1
+        if i == "C":
+            col+= 2
+        if i == "1":
+            row +=2
+        if i == "2":
+            row +=1
+        if i== "1":
+            row +=0
+   
+    return (row,col)
+
+## binary -- return the number of consecutive zeros with in a binary code.
+
+def consecutive_zeros(s):
+    count = []
+    for i in s.split("1"):
+        count.append(len(i))
+    return (max(count))
